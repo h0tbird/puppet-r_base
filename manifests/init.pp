@@ -2,4 +2,4 @@ class r_base (
 
   $ssh = undef,
 
-) { contains "::r_base::${::virtual}" }
+) { contain "r_base::${::virtual}" }
