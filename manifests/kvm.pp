@@ -1,4 +1,4 @@
-class r_base (
+class r_base::kvm (
 
   $users     = undef,
   $hosts     = undef,
@@ -9,6 +9,5 @@ class r_base (
 
 ) {
 
-  if $::is_virtual { notify { "virtual: ${virtual}": } }
-  if $::container { notify { "container: ${container}": } }
+  notify { "Host type: ${virtual}": }
 }
