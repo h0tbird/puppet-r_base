@@ -1,13 +1,10 @@
-class r_base::docker (
+class r_base::docker inherits from r_base {
 
-  $users     = undef,
-  $hosts     = undef,
-  $factsdotd = undef,
-  $yum       = undef,
-  $ntp       = undef,
-  $ssh       = undef,
-
-) {
-
-  notify { "Host type: ${virtual}": }
+  if $ssh {
+    class { 'sshd':
+      ensure  => $ssh['ensure'],
+      enable  => $ssh['enable'],
+      version => $ssh['version'],
+    }
+  }
 }
