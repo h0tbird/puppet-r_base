@@ -1,4 +1,4 @@
-class r_base::docker inherits from r_base {
+class r_base::docker inherits r_base {
 
   if $ssh {
     class { 'sshd':
