@@ -1,1 +1,10 @@
-class r_base ( $ssh = undef ) { contain "r_base::${::virtual}" }
+class r_base (
+
+  $ssh      = undef,
+  $terminfo = undef,
+
+) {
+
+  contain "${module_name}::ssh::${::virtual}"
+  contain "${module_name}::terminfo::${::virtual}"
+}
