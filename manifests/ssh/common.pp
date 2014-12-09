@@ -1,9 +1,8 @@
 class r_base::ssh::common inherits r_base {
 
   if $ssh {
-    class { '::sshd':
+    class { '::ssh':
       ensure  => $ssh['ensure'],
-      enable  => $ssh['enable'],
       version => $ssh['version'],
     }
   }
