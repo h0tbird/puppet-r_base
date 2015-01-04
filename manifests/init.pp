@@ -1,12 +1,7 @@
-class r_base (
-
-  $users    = undef,
-  $terminfo = undef,
-
-) {
+class r_base ( $users = undef ) {
 
   contain "${module_name}::users::${::virtual}"
-  contain "${module_name}::terminfo::${::virtual}"
 
+  include ::terminfo
   include ::p_ssh
 }
