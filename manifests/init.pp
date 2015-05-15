@@ -1,4 +1,4 @@
-class r_base ( $users = undef ) {
+class r_base {
 
   include ::users
   include ::terminfo
